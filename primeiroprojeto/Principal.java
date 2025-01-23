@@ -1,6 +1,8 @@
 package primeiroprojeto;
 
 import br.com.alura.screenmatch.calculo.CalculadoraDeTempo;
+import br.com.alura.screenmatch.calculo.FiltroDeRecomendacao;
+import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
@@ -73,5 +75,12 @@ public class Principal {
 
         System.out.println("Tempo total: " +calculadora.getTempoTotal());
 
+        FiltroDeRecomendacao filtro = new FiltroDeRecomendacao();
+        filtro.filtra(favorito);
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(lost);
+        episodio.setTotalVisualizacao(300);
+        filtro.filtra(episodio);
     }
 }
