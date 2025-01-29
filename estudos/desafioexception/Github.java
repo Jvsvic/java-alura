@@ -31,6 +31,9 @@ public class Github {
         catch (ErroConsultaGitHubException | IOException | InterruptedException  e){
             System.out.println(e.getMessage());
         }
+        catch (IllegalArgumentException e){
+            System.out.println("Parece que você usou um caracter ilegal");
+        }
     }
 
 }
